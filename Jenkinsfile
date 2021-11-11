@@ -3,7 +3,7 @@ node('node1'){
          git 'https://github.com/gmuni/game-of-life.git'
          }
         stage('build') {
-                sh script: 'mvn clean package'
+                sh script: 'mvn clean compile'
         }
         stage('post build') {
                 junit 'gameoflife-web/target/surefire-reports/*.xml'
